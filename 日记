@@ -16,4 +16,53 @@ get和post请求   明天了解
 *****r：只读  用read()
 *****w：只写 用write()            //会清除之前写的内容
 *****a：追加内容 用write()        //会在已经写的内容基础上增加新的内容
+####################################################
+#搜狗动态搜索（用get请求）
+import requests
+url='https://www.sogou.com/web?'
+headers={'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:105.0) Gecko/20100101 Firefox/105.0'}
+aa=input('请输入：')
+a={'query':aa}
+b=requests.get(url,params=a,headers=headers)
+filename=aa+'.html'
+#print(filename)
+with open(filename,'w',encoding='utf-8') as f1:
+    f1.write(b.text)
+########################################################
 明天写post的内容和AJAX请求
+AJAX请求可以理解为网页异步刷新，指在不刷新整个网页的前提下对网页进行局部刷新。
+在xhr中的post类型请求中可以找到，格式为JSON类型
+#########################################################
+#破解百度翻译（post请求）
+import requests
+import json
+url='https://fanyi.baidu.com/sug'
+aa=input("请输入：")
+data={'kw':aa}
+headers={'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:105.0) Gecko/20100101 Firefox/105.0'}
+a=requests.post(url,data=data,headers=headers)
+b=a.json()
+c=aa+'.json'
+fp=open(c,'w',encoding='utf-8')     #fp-文件参数
+json.dump(b,fp=fp,ensure_ascii=False)
+#############################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
