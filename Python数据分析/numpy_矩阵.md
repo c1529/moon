@@ -8,10 +8,10 @@
    [4 5 6]
    [7 8 9]]
    '''
- ### 使用matrix函数
+ ## 使用matrix函数
   matr1=np.matrix([[1,2,3],[4,5,6],[7,8,9]])
   print(matr1)
- ### 使用bmat函数（分块矩阵，将小矩阵变成大矩阵）
+ ## 使用bmat函数（分块矩阵，将小矩阵变成大矩阵）
  import numpy as np
  matr1=np.matrix([[1,2,3],[4,5,6],[7,8,9]])
  matr2=matr1*3
