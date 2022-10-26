@@ -173,6 +173,84 @@ numpy提供两个基本对象：ndarray(是存储单一数据类型的多维数�
     '''
     [0 1 2 3 4 5 6 7 8]
     '''
+   ### 用faltten函数展平数组
+    import numpy as np
+    arr1=np.array([[1,2,3,4,5],[6,7,8,9,10]])
+    print(arr1)
+    print(arr1.flatten())      //横向展平
+    print(arr1.flatten('F'))   //纵向展平
+    '''
+    [[ 1  2  3  4  5]
+    [ 6  7  8  9 10]]
+    [ 1  2  3  4  5  6  7  8  9 10]
+    [ 1  6  2  7  3  8  4  9  5 10]
+    '''
+   ### 用hstack函数实现数组横向组合
+    import numpy as np
+    arr1=np.arange(12).reshape(3,4)
+    arr2=arr1*3
+    print(np.hstack((arr1,arr2)))
+    '''
+    [[ 0  1  2  3  0  3  6  9]
+    [ 4  5  6  7 12 15 18 21]
+    [ 8  9 10 11 24 27 30 33]]
+    '''
+   ### 使用vstack函数实现数组纵向组合
+    import numpy as np
+    arr1=np.arange(12).reshape(3,4)
+    arr2=arr1*3
+    print(np.vstack((arr1,arr2)))
+    '''
+    [[ 0  1  2  3]
+    [ 4  5  6  7]
+    [ 8  9 10 11]
+    [ 0  3  6  9]
+    [12 15 18 21]
+    [24 27 30 33]]
+    '''
+   ### 使用concatenate函数组合数组
+    import numpy as np
+    arr1=np.arange(12).reshape(3,4)
+    arr2=arr1*3
+    print(np.concatenate((arr1,arr2),axis=1))#横向
+    print(np.concatenate((arr1,arr2),axis=0))#纵向
+    '''
+    [[ 0  1  2  3  0  3  6  9]
+    [ 4  5  6  7 12 15 18 21]
+    [ 8  9 10 11 24 27 30 33]]
+    [[ 0  1  2  3]
+    [ 4  5  6  7]
+    [ 8  9 10 11]
+    [ 0  3  6  9]
+    [12 15 18 21]
+    [24 27 30 33]]
+    '''
+   ### 使用hsplit和vsplit实现横向和纵向分割
+    import numpy as np
+    arr1=np.arange(16).reshape(4,4)
+    print(np.hsplit(arr1,2))
+    '''
+    [array([[ 0,  1], [ 4,  5],[ 8,  9],[12, 13]]), 
+       array([[ 2,  3],[ 6,  7],[10, 11],[14, 15]])]
+     '''
+     print(np.vsplit(arr1,2))
+     '''
+     [array([[0, 1, 2, 3],[4, 5, 6, 7]]), 
+       array([[ 8,  9, 10, 11], [12, 13, 14, 15]])]
+   ### 使用split函数分割数组
+    import numpy as np
+    arr1=np.arange(16).reshape(4,4)
+    print(np.split(arr1,2,axis=1))
+    '''
+    [array([[ 0,  1], [ 4,  5],[ 8,  9],[12, 13]]), 
+    array([[ 2,  3],[ 6,  7],[10, 11],[14, 15]])]
+    '''
+    print(np.split(arr1,2,axis=0))
+    '''
+    [array([[ 0,  1], [ 4,  5],[ 8,  9],[12, 13]]), 
+    array([[ 2,  3],[ 6,  7],[10, 11],[14, 15]])]
+    '''
+
     
 
 
