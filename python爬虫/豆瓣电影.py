@@ -7,3 +7,6 @@ res=requests.get(url=url,params=param,headers=headers)
 list_data=res.json()
 fp=open('./豆瓣.json','w',encoding='utf-8')
 json.dump(list_data,fp=fp,ensure_ascii=False)
+//初步清洗一下
+for data in list_data:
+    print(data['title'])
