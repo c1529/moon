@@ -8,6 +8,8 @@
     np.save("D:/save_arr1",arr1)
     a=np.load("D:/save_arr1.npy")
     print(a)
+
+
     
     
     
