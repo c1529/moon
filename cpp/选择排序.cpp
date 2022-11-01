@@ -24,7 +24,7 @@ void sort_2(int num[], int n)  //选择
 		min = i;
 		for (j = i; j < n; j++)
 		{
-			if (num[i] > num[j ])
+			if (num[i] > num[j ])  //不能把i换成min，因为这个是为索引为i的地址选择合适的值，循环里的min记录着最小值的索引
 			{
 				min = j;
 				temp = num[i];
@@ -51,38 +51,6 @@ int main()
 	print(num, n);
 	return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
